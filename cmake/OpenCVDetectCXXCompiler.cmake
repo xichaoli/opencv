@@ -11,6 +11,7 @@
 # - AARCH64 - ARMv8+ (64-bit)
 # - PPC64 / PPC64LE - PowerPC
 # - MIPS
+# - SW_64
 #
 # OS:
 # - WIN32 - Windows | MINGW
@@ -109,6 +110,8 @@ elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(riscv.*|RISCV.*)")
   set(RISCV 1)
 elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(loongarch64.*|LOONGARCH64.*)")
   set(LOONGARCH64 1)
+elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(sw_64.*|SW_64.*)")
+  set(SW_64 1)
 else()
   if(NOT OPENCV_SUPPRESS_MESSAGE_UNRECOGNIZED_SYSTEM_PROCESSOR)
     message(WARNING "OpenCV: unrecognized target processor configuration")
